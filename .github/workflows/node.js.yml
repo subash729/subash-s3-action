@@ -32,7 +32,7 @@ jobs:
       - name: Deploy to S3 Bucket
         uses: jakejarvis/s3-sync-action@master
         #with:
-          # args: --delete --exclude '.git/*' dist/
+          # args: --delete --exclude '.git/*' node_modules/
            
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
@@ -42,4 +42,5 @@ jobs:
 
           run: |
             aws s3 sync dist/ s3://${AWS_S3_BUCKET}/ --delete
+          #  aws s3 sync dist/ s3://${AWS_S3_BUCKET}/ --delete
           #  run: aws s3 sync dist/ s3://subash-frontend --delete --exclude ".git/*"
