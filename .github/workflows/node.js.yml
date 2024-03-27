@@ -46,6 +46,7 @@ jobs:
         
   increase-version:
     runs-on: self-hosted
+    needs: install-and-build
     steps:
     - uses: actions/checkout@v3
     - name: Set Git user identity
