@@ -43,4 +43,4 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
 
       - name: Copy dist folder to S3 using cp
-        run: aws s3 sync dist/ s3://subash-test-frontend --delete 
+        run: aws s3 sync dist/ s3://subash-frontend --delete 
